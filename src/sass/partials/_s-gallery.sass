@@ -1,0 +1,86 @@
+/* Gallery */
+
+.s-gallery
+  position: relative
+  background: url('../img/bg-mask-top.png') center -1% no-repeat, url('../img/bg-mask-bottom.png') center 101% no-repeat, url('../img/bg-gallery.jpg') center center no-repeat
+  background-size: contain, contain, cover
+  background-color: $dark-color
+  color: $text-color-inverse
+  padding: 130px 0 160px
+  +xs()
+    padding: 20px 0 20px
+
+  &__coffebean-left
+    +position(absolute, -50px null null 50px)
+    +bg-center('../img/coffebean4.png')
+    background-size: cover
+    width: 168px
+    height: 197px
+    z-index: 0
+    +xs()
+      display: none
+  &__coffebean-right
+    +position(absolute, null 40px -90px null)
+    +bg-center('../img/coffebean5.png')
+    background-size: cover
+    width: 226px
+    height: 272px
+    z-index: 0
+    +xs()
+      display: none
+
+  &__title
+    @extend %section-header
+    @extend %section-header--inverse
+    position: relative
+    display: inline-block
+    margin-bottom: 17px
+    &:before,
+    &:after
+      content: ''
+      +align(v)
+    &:before
+      @extend .svg-deco-left
+      left: -1.4em
+    &:after
+      @extend .svg-deco-right
+      right: -1.2em
+  &__text
+    line-height: 1.6
+    margin: 0 auto
+    max-width: 35%
+    +xs()
+      max-width: none
+  &__slider
+    +sd()
+      padding: 0 30px
+  &__slide
+    display: inline-block
+    padding: 25px
+    margin: 45px 0
+    +xs()
+      margin: 0
+  &__controls
+    display: flex
+    justify-content: center
+    align-items: center
+    +xs()
+      display: none
+.control
+  &--text
+    height: 68px
+    font-size: 30px
+    color: $white-color
+    margin: 0 110px
+    span
+      font-size: 19.5px
+      color: $primary-color
+
+  &--arrow
+    +size(68px)
+    border: 1px solid $primary-color
+    cursor: pointer
+    &-left
+      +add-arrow(110px, 20px, left, -115%, -30%, $white-color)
+    &-right
+      +add-arrow(110px, 20px, right, -115%, -30%, $white-color)

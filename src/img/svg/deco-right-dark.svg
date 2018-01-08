@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="15" viewBox="0 0 32 15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000000;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="deco-right.svg" class="cls-1" d="M1106,3163h23a2.436,2.436,0,0,1-.5,1.5c-2.67,1.69-18.02.56-22.5,0.5v-2Zm0,6.5h32v2h-32v-2Zm0,6.5h22.5a1.409,1.409,0,0,0,.5.5v1.5h-23v-2Z" transform="translate(-1106 -3163)"/>
+</svg>

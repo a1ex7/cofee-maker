@@ -1,0 +1,118 @@
+%svg-common {
+	background: url("../img/sprites/sprite.svg") no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.svg-arrow-left {
+	@extend %svg-common;
+	background-position: 99.17037037037036% 67.20689655172414%;
+	width: 9px;
+	height: 16px;
+}
+
+.svg-arrow-right {
+	@extend %svg-common;
+	background-position: 92.50536917721988% 67.20689655172414%;
+	width: 8.97px;
+	height: 16px;
+}
+
+.svg-certificate {
+	@extend %svg-common;
+	background-position: 97.82888526559684% 40.25224741714746%;
+	width: 27.47px;
+	height: 28.47px;
+}
+
+.svg-clock {
+	@extend %svg-common;
+	background-position: 100% 0;
+	width: 30px;
+	height: 30px;
+}
+
+.svg-deco-left {
+	@extend %svg-common;
+	background-position: 27.43362831858407% 84.0909090909091%;
+	width: 31px;
+	height: 15px;
+}
+
+.svg-deco-left-dark {
+	@extend %svg-common;
+	background-position: 0 84.0909090909091%;
+	width: 31px;
+	height: 15px;
+}
+
+.svg-deco-right {
+	@extend %svg-common;
+	background-position: 73.21428571428571% 0;
+	width: 32px;
+	height: 15px;
+}
+
+.svg-deco-right-dark {
+	@extend %svg-common;
+	background-position: 73.21428571428571% 17.045454545454547%;
+	width: 32px;
+	height: 15px;
+}
+
+.svg-envelope {
+	@extend %svg-common;
+	background-position: 0 0;
+	width: 41px;
+	height: 35px;
+}
+
+.svg-fa-envelope {
+	@extend %svg-common;
+	background-position: 39.80582524271845% 0;
+	width: 41px;
+	height: 35px;
+}
+
+.svg-fa-phone {
+	@extend %svg-common;
+	background-position: 0 54.6875%;
+	width: 38px;
+	height: 39px;
+}
+
+.svg-fb {
+	@extend %svg-common;
+	background-position: 85.65632278909008% 70.87272727272727%;
+	width: 10.91px;
+	height: 20.5px;
+}
+
+.svg-location {
+	@extend %svg-common;
+	background-position: 67.21311475409836% 41.95804195804196%;
+	width: 22px;
+	height: 31.5px;
+}
+
+.svg-no {
+	@extend %svg-common;
+	background-position: 0 99.44134078212291%;
+	width: 13.5px;
+	height: 13.5px;
+}
+
+.svg-phone {
+	@extend %svg-common;
+	background-position: 35.84905660377358% 54.6875%;
+	width: 38px;
+	height: 39px;
+}
+
+.svg-yes {
+	@extend %svg-common;
+	background-position: 48.249027237354085% 82.22222222222223%;
+	width: 15.5px;
+	height: 13px;
+}
+

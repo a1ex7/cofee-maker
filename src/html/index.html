@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('partials/head.html')
+
+<body>
+
+<!-- Start HEADER -->
+<header class="header-main">
+
+  <!-- Header Logo, Menu, Phone -->
+  <section class="s-header clearfix">
+    <div class="s-header__logo">
+      <h1 class="logo"><a href="/" class="logo__link"><img src="img/logo.png" alt="Coffee Maker" class="logo__img"></a></h1>
+    </div>
+    <div class="s-header__phone">
+      <p class="phone">+38 (099) 66-11-730</p>
+    </div>
+    <div class="s-header__menu">
+      <nav class="menu">
+        <div class="menu__link menu__link--mobile" href="#">Menu</div>
+        <ul class="menu__list">
+          <li class="menu__item"><a class="menu__link menu__link--active" href="#program">program</a></li>
+          <li class="menu__item"><a class="menu__link" href="#gallery">gallery</a></li>
+          <li class="menu__item"><a class="menu__link" href="#testimonials">reviews</a></li>
+          <li class="menu__item"><a class="menu__link" href="#partners">partners</a></li>
+          <li class="menu__item"><a class="menu__link" href="#contact">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Banner -->
+  <section class="s-banner">
+    <div class="container">
+    <div class="banner rellax">
+      <div class="banner__rating">
+        <div class="rating">
+          <i class="rating__star fa fa-star"></i>
+          <i class="rating__star fa fa-star"></i>
+          <i class="rating__star fa fa-star"></i>
+        </div>
+      </div>
+      <div class="banner__subtitle">Intensive program barista training</div>
+      <h2 class="banner__title">Barista Training in <span>amsterdam</span></h2>
+      <p class="banner__text">On the basis of the company's largest coffee roasters</p>
+      <div class="banner__divider"></div>
+      <div class="banner__scroll"><i class="banner__arrow fa fa-chevron-down"></i></div>
+    </div>
+    </div>
+  </section>
+  <div class="header-main__coffebean prellax" data-prellax-percent="0" data-prellax-speed="-1"></div>
+</header><!-- End HEADER -->
+
+<!-- Start MAIN -->
+<main class="main-content">
+
+  <!-- Program -->
+  <section class="s-program" id="program">
+    <div class="container">
+      <h3 class="s-program__title">Programs</h3>
+      <p class="s-program__text">We share their experience and professional barista championships multiple winners</p>
+      <div class="s-program__program">
+        <div class="program">
+          <nav class="program__nav">
+            <ul class="program__list">
+              <li class="program__item"><a href="#basic" class="program__link program__link--active">Basic</a></li>
+              <li class="program__item"><a href="#premium" class="program__link">Premium</a></li>
+              <li class="program__item"><a href="#platinum" class="program__link">Platinum</a></li>
+            </ul>
+          </nav>
+          <div class="program__content">
+
+            @@loop('partials/program-card.html', [
+              {"id": "basic", "title": "Beginners Course", "price": "1 500"},
+              {"id": "premium", "title": "Premium Course", "price": "3 500"},
+              {"id": "platinum", "title": "Platinum Course", "price": "9 500"}
+            ])
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="s-program__coffebean-left prellax" data-prellax-percent="0.1" data-prellax-speed="-3"></div>
+    <div class="s-program__coffebean-right prellax" data-prellax-percent="0.2" data-prellax-speed="-3"></div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="s-gallery" id="gallery">
+    <div class="wrapper">
+      <h3 class="s-gallery__title">Gallery</h3>
+      <p class="s-gallery__text">
+        You yourself are testing the taste benefits of each method
+        and select the type of cooking yourself
+      </p>
+    </div>
+    <div class="s-gallery__slider">
+
+      @@include('partials/gallery-pictures.html')
+
+    </div>
+    <div class="s-gallery__controls">
+      <div class="control control--arrow control--arrow-left"></div>
+      <div class="control control--text">1<span> from </span>10</div>
+      <div class="control control--arrow control--arrow-right"></div>
+    </div>
+    <div class="s-gallery__coffebean-left prellax" data-prellax-percent="-0.1" data-prellax-speed="-3"></div>
+    <div class="s-gallery__coffebean-right prellax" data-prellax-percent="0.5" data-prellax-speed="-2"></div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="s-testimonials" id="testimonials">
+    <div class="container">
+      <h3 class="s-testimonials__title">Testimonials</h3>
+      <p class="s-testimonials__text">We have enough patience to teach you the art of coffee</p>
+      <button type="button" class="s-testimonials__arrow s-testimonials__arrow--prev" aria-label="Previous"><i class="svg-arrow-left svg-arrow-left-dims"></i></button>
+      <button type="button" class="s-testimonials__arrow s-testimonials__arrow--next" aria-label="Next"><i class="svg-arrow-right svg-arrow-right-dims"></i></button>
+      <div class="s-testimonials__content">
+
+        @@loop('partials/testimonial.html', [
+          {"name": "Alex Nikandrov"},
+          {"name": "Ivan Petrov"},
+          {"name": "Danil Dorohov"},
+          {"name": "Sergey Sergeevich"},
+          {"name": "Julia Baranova"},
+          {"name": "Vsevolod Ivanovich"}
+        ])
+
+      </div>
+      <div class="s-testimonials__controls"></div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="s-partners" id="partners">
+    <div class="container">
+      <h3 class="s-partners__title">Our partners</h3>
+      <div class="s-partners__divider"></div>
+      <div class="s-partners__content">
+
+        @@include('partials/partners-list.html')
+
+      </div>
+      <button type="button" class="s-partners__arrow s-partners__arrow--prev" aria-label="Previous"><i class="svg-arrow-left svg-arrow-left-dims"></i></button>
+      <button type="button" class="s-partners__arrow s-partners__arrow--next" aria-label="Next"><i class="svg-arrow-right svg-arrow-right-dims"></i></button>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="s-form" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-4">
+          <h3 class="s-form__title">Have questions?</h3>
+          <p class="s-form__text">Leave a request and we will contact you shortly</p>
+          <form action="#" method="post" class="s-form__form">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                <input type="text" name="username" class="form__input" placeholder="Your name" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                <input type="tel" name="tel" pattern="[0-9]{4,10}" class="form__input" placeholder="contact number" required>
+              </div>
+              <div class="col-lg-5 col-lg-offest-1 col-md-12">
+              <button type="submit" class="form__button">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="s-form__coffebean"></div>
+    <div class="s-form__coffebean-left prellax" data-prellax-percent="0" data-prellax-speed="-4"></div>
+    <div class="s-form__coffebean-right prellax" data-prellax-percent="-0.2" data-prellax-speed="-2"></div>
+  </section>
+</main><!-- End MAIN -->
+
+<!-- Start FOOTER -->
+<footer class="footer-main">
+  <div class="container">
+    <h3 class="footer__title">Professional school<br>barista</h3>
+    <div class="footer__text">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+          </p>
+        </div>
+      </div>
+    </div>
+    <table class="footer__table">
+      <tr>
+        <td colspan="3">
+          <nav class="menu menu--footer">
+            <ul class="menu__list">
+              <li class="menu__item"><a href="#program" class="menu__link">Program</a></li>
+              <li class="menu__item"><a href="#gallery" class="menu__link">Gallery</a></li>
+              <li class="menu__item"><a href="#testimonials" class="menu__link">Testimonials</a></li>
+              <li class="menu__item"><a href="#contact" class="menu__link">Contact</a></li>
+            </ul>
+          </nav>
+        </td>
+      </tr>
+      <tr>
+        <td class="footer__contact"><i class="svg-phone svg-phone-dims"></i></td>
+        <td class="footer__contact"><i class="svg-location svg-location-dims"></i></td>
+        <td class="footer__contact"><i class="svg-envelope svg-envelope-dims"></i></td>
+      </tr>
+      <tr>
+      <td class="footer__contact"><a class="footer__link" href="tel:+380996611730">+38 099 6611730</a></td>
+      <td class="footer__contact"><a class="footer__link" href="#location">Ukraine, 61002</a></td>
+        <td class="footer__contact"><a class="footer__link" href="mailto:hello@.com">hello@.com</a></td>
+      </tr>
+    </table>
+    <div class="footer__copyright">
+      <p>
+        <span class="copyright__text">© Copyright 2017 . All Rights Reserved.</span><span class="copyright__author">site template by <a href="nikandrov.pro">NIKANDROV.PRO</a></span>
+      </p>
+    </div>
+  </div>
+</footer><!-- End FOOTER -->
+
+
+<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Footer */
+
+.footer-main
+  background: url('../img/bg-mask-top.png') center -1% no-repeat, url('../img/bg-footer.jpg') center center no-repeat
+  background-size: contain, cover
+  background-color: $dark-color
+  color: $text-color-inverse
+  padding: 140px 0 45px
+  +xs()
+    padding: 50px 0 20px
+
+.footer
+  &__title
+    @extend %section-header
+    @extend %section-header--inverse
+    line-height: 1.2
+
+  &__text
+    margin: 50px -10px 70px
+    +xs()
+      margin: 20px 0px 20px
+    p
+      line-height: 1.68
+      text-align: justify
+      padding: 0 15px
+      +xs()
+        line-height: 1.35
+        text-align: left
+
+  &__table
+    font: bold 15px $font-second
+    text-transform: uppercase
+    width: 100%
+    margin-top: 50px
+    margin-bottom: 42px
+    +xs()
+      font: bold 12px $font-second
+      margin: 10px 0 20px
+    text-align: center
+    background-color: rgba(0,0,0,0.38)
+    td
+      border: 1px solid #4d4d4d
+      padding: 30px
+      +xs()
+        padding: 5px
+    tr:first-child td
+      padding: 0 30px
+    tr:last-child td
+      padding: 50px
+      +xs()
+        padding: 5px
+
+  &__copyright
+    text-align: center
+  &__contact
+    cursor: pointer
+    transition: background-color 0.2s ease
+    &:hover
+      background-color: rgba(0,0,0,0.5)
+  &__link
+    color: $white-color
+
+.copyright__text
+  padding: 8px 20px
+  +xs()
+    display: block
+    font-size: 14px
+.copyright__author
+  border-left: 2px solid $white-color
+  +xs()
+    border-left: 0
+    border-top: 1px solid $white-color
+  padding: 6px 20px
+  text-transform: uppercase
+  font: bold 12px $font-second
+  letter-spacing: 1px
+  color: $white-color
+  a
+    color: $white-color
+    text-decoration: underline
+    &:hover
+      color: $second-color
+
+// Reset border-bottom for footer menu
+.menu--footer
+  .menu__link
+    border-bottom: 0
+    &:hover
+      border-bottom: 0

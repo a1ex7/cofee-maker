@@ -1,0 +1,181 @@
+/* Program */
+
+.s-program
+  background: url('../img/wood-coffee-beans.png') right 108% no-repeat
+  position: relative
+  padding: 140px 0
+  +xs()
+    padding: 20px 0
+
+  &__coffebean-left
+    +position(absolute, 217px null null -36px)
+    +bg-center('../img/coffebean2.png')
+    background-size: cover
+    width: 172px
+    height: 207px
+    z-index: -1
+    +xs()
+      display: none
+  &__coffebean-right
+    +position(absolute, 732px 0px null null)
+    +bg-center('../img/coffebean3.png')
+    background-size: cover
+    width: 107px
+    height: 233px
+    z-index: -1
+    +xs()
+      display: none
+
+  &__title
+    @extend %section-header
+    &:before,
+    &:after
+      font: 18px FontAwesome
+      display: inline-block
+      padding: 8px 20px 12px 20px
+      content: '\f005'
+      vertical-align: middle
+  &__text
+  &__program
+    margin-top: 50px
+    +xs()
+      margin-top: 20px
+
+.program
+  &__list
+    display: flex
+    border-bottom: 2px solid #c6c6c6
+    justify-content: center
+  &__link
+    font: bold 21px $font-second
+    display: block
+    padding: 35px 96px
+    margin: 0 12px
+    +sd()
+      padding: 35px 55px
+    +xs()
+      padding: 5px 5px
+      margin: 0 5px
+    text-transform: uppercase
+    color: #adadad
+    border-bottom: 4px solid transparent
+    margin-bottom: -3px
+    &.program__link--active
+      color: $dark-color
+      border-bottom: 4px solid $dark-color
+
+.program-card
+  position: relative
+  outline: none
+  overflow: hidden
+  &:before
+    font: bold 200px/1 $font-second
+    position: absolute
+    top: 0px
+    right: 6%
+    content: attr(data-title)
+    text-transform: uppercase
+    color: #ddd
+    +md()
+      font-size: 150px
+    +sd()
+      font-size: 100px
+      right: 3%
+    +xs()
+      display: none
+  &__header
+    padding: 95px 0 50px
+    +md()
+      padding: 70px 0 30px
+    +xs()
+      padding: 20px 0 20px
+    text-align: left
+    color: $dark-color
+  &__picture
+    img
+      margin: 0 auto
+  &__info
+    +md()
+      margin-left: 30px
+    +sd()
+      margin-left: 0
+      text-align: center
+  &__title
+    font-size: 30px
+    font-weight: bold
+    margin: 0 0 35px
+    +md()
+      margin-bottom: 25px
+    color: $header-color
+  &__options
+    padding: 9px 0
+    +md()
+      padding: 5px 0
+    i
+      margin-right: 15px
+  &__price
+    font-size: 58px
+    font-weight: bold
+    line-height: 1
+    margin-bottom: 15px
+    padding: 13px 0
+    +md()
+      font-size: 50px
+      margin-bottom: 2px
+      padding: 10px 0
+    span
+      font-size: 31.3px
+  &__registration-btn
+    font: bold 14px/14px $font-second
+    letter-spacing: 1px
+    display: inline-block
+    min-width: 245px
+    padding: 20px 30px
+    text-align: center
+    text-transform: uppercase
+    color: $white-color
+    border: 1px solid $dark-color
+    border-radius: 2px
+    background-color: $dark-color
+    &:hover
+      background-color: transparent
+  &__content
+    text-align: left
+    +xs()
+      line-height: 1.35
+  &__list-title
+    font: bold 17px $font-second
+    letter-spacing: 1.3px
+    margin-top: 32px
+    +xs()
+      margin-top: 5px
+    padding: 15px 0
+    text-transform: uppercase
+    border-top: 1px solid #939393
+    &--unbordered
+      border-top: none
+  &__list-items
+    letter-spacing: -0.16px
+    li
+      position: relative
+      margin-left: em(10px)
+      &:before
+        position: absolute
+        left: -10px
+        content: '-'
+  &__table tr
+    +transition(background-color)
+    &:hover
+      background-color: rgba(0,0,0,0.1)
+  &__table,
+  &__table td
+    letter-spacing: -0.16px
+    border: 1px solid #808080
+  &__table td
+    padding: 2px 20px 2px 15px
+    .icon
+      +hide-text()
+    &:first-child
+      padding: 2px 17px
+
+

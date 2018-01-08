@@ -1,0 +1,103 @@
+*,
+*:after,
+*:before
+  box-sizing: border-box
+
+.clearfix:before,
+.clearfix:after
+  content: ''
+  display: table
+
+.clearfix:after
+  clear: both
+
+html, body
+  height: 100%
+
+
+.wrapper,
+.container
+  position: relative
+  max-width: $wrapper-size
+  min-width: 320px
+  margin-left: auto
+  margin-right: auto
+  padding: 0 15px
+
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus
+  text-decoration: none
+  outline: none
+  cursor: pointer
+  transition: all 0.25s ease
+
+a:active
+  color: inherit
+
+a:hover,
+a:focus
+  color: $second-color
+
+img
+  // display: block
+  // margin: 0 auto
+  max-width: 100%
+  height: auto
+
+table
+  border-collapse: collapse
+
+input[type="text"],
+input[type="tel"]
+  border: none
+  outline: none
+  padding: 10px 0
+  width: 100%
+  color: $dark-color
+  background-color: transparent
+  font: bold 12.5px $font-second
+  border-bottom: 1px solid #6e6e6e
+  text-transform: uppercase
+  transition: background-color 0.25s ease-in-out
+  &:hover,
+  &:focus
+    background-color: rgba(0,0,0,0.1)
+  +xs()
+    text-align: center
+
+input[type='submit'],
+button[type='submit']
+  +reset-btn()
+  border: 1px solid $dark-color
+  font: bold 16px $font-second
+  text-transform: uppercase
+  color: $dark-color
+  padding: 10px
+  line-height: 40px
+  min-width: 225px
+  transition: all 0.25s ease-in-out
+  &:hover,
+  &:focus
+    color: $second-color
+    background-color: $dark-color
+
+body
+  font-family: $font-default
+  font-size: $font-size
+  line-height: $line-height
+  +xs()
+    line-height: 1.75
+  letter-spacing: $letter-spacing
+  color: $text-color
+  background: $background-color url('../img/bg-main.jpg') center center
+  width: 100%
+  max-width: 100%
+  min-width: 320px
+  overflow-x: hidden
+  scroll-behavior: smooth
+
+section
+  text-align: center

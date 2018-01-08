@@ -1,0 +1,260 @@
+/* Header */
+
+.header-main
+  background: url('../img/bg-mask-bottom.png') center 101% no-repeat, url('../img/bg-head.jpg') center center no-repeat
+  background-size: contain, cover
+  background-color: $dark-color
+  color: $text-color-inverse
+  position: relative
+
+  &__coffebean
+    +bg-center('../img/coffebean1.png')
+    background-size: cover
+    width: em(239px)
+    height: em(246px)
+    +position(absolute, null 5% -5% null)
+    z-index: 1
+    +xs()
+      display: none
+
+.s-header
+  padding: 0 40px
+  +md()
+    padding: 0
+  +xs()
+    padding: 0 10px
+  width: 100%
+  &__logo
+    +position(absolute, 24px null null 70px)
+    +sd()
+      width: 140px
+      top: 14px
+    +xs()
+      top: 10px
+      left: 10px
+    &:before,
+    &:after
+      content: ''
+      display: block
+      height: 1px
+      width: calc(100vw - 110% - 70px)
+      top: calc(50% + 1px)
+      background-color: #817e7b
+      position: absolute
+      +xs()
+        width: calc(100vw - 110% - 10px)
+    &:before
+      left: 110%
+    &:after
+      right: 110%
+  &__menu
+    float: right
+    margin-right: 6%
+    +ld()
+      margin-right: 20px
+    +xs()
+      margin: 0 10px
+      width: 38%
+      position: absolute
+      z-index: 1
+      top: 6px
+      left: 50%
+      margin-left: -19%
+  &__phone
+    letter-spacing: -1px
+    float: right
+    padding-right: 5px
+    +md()
+      display: none
+    +xs()
+      display: block
+
+
+  // Styles for Fixed header
+
+  &--fixed
+    position: fixed
+    z-index: 999
+    background-color: rgba(#000, 0.8)
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    .s-header__logo
+      top: 5px
+      +sd()
+        +round(40px)
+        background-color: rgba(#000, 0.8)
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+      +xs()
+        width: 100px
+      &:after,
+      &:before
+        content: none
+    .logo
+      width: 140px
+      +sd()
+        padding: 10px
+      +xs()
+        width: 100px
+    ~ .s-banner
+      padding-top: 102px /* compensate fixed header height */
+      +sd()
+        padding-top: 63px /* compensate fixed header height */
+
+
+.logo
+  width: 230px
+  +sd()
+    width: 140px
+  margin: 0
+  &__link
+    display: block
+    &:hover
+      transform: scale(1.1)
+
+
+.menu
+  +xs()
+    +transition()
+    &:hover .menu__list
+      display: block
+
+  &__list
+    +xs()
+      display: none
+      background-color: rgba(0,0,0,0.8)
+  &__item
+    display: inline-block
+    +xs()
+      display: block
+    transition: color 0.2s ease
+    position: relative
+    &:not(:first-child):before
+      +size(5px)
+      +round()
+      display: inline-block
+      margin: 0 13px
+      +ld()
+        margin: 0 -2px
+      +xs()
+        display: none
+      content: ''
+      background-color: $white-color
+    &:last-child
+      margin-right: 0
+  &__link
+    display: inline-block
+    font: bold 12px/99px $font-second
+    text-transform: uppercase
+    padding: 0 20px
+    color: $white-color
+    border-bottom: 3px solid transparent
+    +md()
+      padding: 0 15px
+    +sd()
+      line-height: 60px
+    +xs()
+      line-height: 50px
+      padding: 0 30px
+    &--active
+      color: $second-color
+      border-bottom: 3px solid $primary-color
+    &:hover
+      border-bottom: 3px solid $second-color
+    &--mobile
+      display: none
+      +xs()
+        display: block
+
+
+.phone
+  font: bold 27px/98px $font-second
+  +ld()
+    font-size: 16px
+  +sd()
+    line-height: 70px
+  +xs()
+    font-size: 14px
+    line-height: 60px
+
+
+.banner
+  text-align: center
+  margin: 100px 0 190px
+  +sd()
+    margin: 20px 0 30px
+  &__rating
+    color: $primary-color
+  &__subtitle
+    font-size: 17px
+    margin: 14px 24px
+    display: flex;
+    justify-content: center;
+    align-items: center
+    +sd()
+      margin: 5px 0
+    &:before,
+    &:after
+      content: ''
+      display: block
+      +sd()
+        display: none
+      border-top: 3px solid transparent
+      border-bottom: 3px solid transparent
+    &:before
+      border-right: 100px solid $primary-color
+      margin-right: 90px
+    &:after
+      border-left: 100px solid $primary-color
+      margin-left: 90px
+  &__title
+    font: bold 58px/1.2 $font-second
+    text-transform: uppercase
+    margin: 30px 0
+    letter-spacing: 5.7px
+    span
+      color: $primary-color
+    +xs()
+      font-size: 30px
+      letter-spacing: initial
+      margin: 20px 0
+  &__text
+    font-size: 21px
+    margin: 37px 0 20px
+  &__divider
+    +size(7px)
+    +round()
+    position: relative
+    background-color: $primary-color
+    margin: 0 auto
+    &:before,
+    &:after
+      content: ''
+      display: block
+      border-top: 2px solid transparent
+      border-bottom: 2px solid transparent
+      position: absolute
+      top: calc(50% - 2px)
+    &:before
+      border-right: 60px solid $primary-color
+      left: -65px
+    &:after
+      border-left: 60px solid $primary-color
+      right: -65px
+  &__scroll
+    +size(62px)
+    +round()
+    +transition(color)
+    position: relative
+    border: 1px solid $white-color
+    margin: 70px auto
+    +xs()
+      +size(50px)
+      margin: 20px auto
+    &:hover
+      color: $second-color
+      cursor: pointer
+  &__arrow
+    +align(hv)
+
+.rating__star
+  margin: 10px
+

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG &lt;view&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		<style>i{text-indent:200%;white-space:nowrap;overflow:hidden;display:inline-block}</style>
+
+<!--
+	
+Sprite CSS
+====================================================================================================
+This is an all-in-one inline version of the CSS necessary to use the SVG sprite. 
+
+-->
+
+<style type="text/css">
+.svg-arrow-left {
+	background: url("sprite.svg") 99.17037037037036% 67.20689655172414% no-repeat;
+	width: 9px;
+	height: 16px;
+}
+.svg-arrow-right {
+	background: url("sprite.svg") 92.50536917721988% 67.20689655172414% no-repeat;
+	width: 8.97px;
+	height: 16px;
+}
+.svg-certificate {
+	background: url("sprite.svg") 97.82888526559684% 40.25224741714746% no-repeat;
+	width: 27.47px;
+	height: 28.47px;
+}
+.svg-clock {
+	background: url("sprite.svg") 100% 0 no-repeat;
+	width: 30px;
+	height: 30px;
+}
+.svg-deco-left {
+	background: url("sprite.svg") 27.43362831858407% 84.0909090909091% no-repeat;
+	width: 31px;
+	height: 15px;
+}
+.svg-deco-left-dark {
+	background: url("sprite.svg") 0 84.0909090909091% no-repeat;
+	width: 31px;
+	height: 15px;
+}
+.svg-deco-right {
+	background: url("sprite.svg") 73.21428571428571% 0 no-repeat;
+	width: 32px;
+	height: 15px;
+}
+.svg-deco-right-dark {
+	background: url("sprite.svg") 73.21428571428571% 17.045454545454547% no-repeat;
+	width: 32px;
+	height: 15px;
+}
+.svg-envelope {
+	background: url("sprite.svg") 0 0 no-repeat;
+	width: 41px;
+	height: 35px;
+}
+.svg-fa-envelope {
+	background: url("sprite.svg") 39.80582524271845% 0 no-repeat;
+	width: 41px;
+	height: 35px;
+}
+.svg-fa-phone {
+	background: url("sprite.svg") 0 54.6875% no-repeat;
+	width: 38px;
+	height: 39px;
+}
+.svg-fb {
+	background: url("sprite.svg") 85.65632278909008% 70.87272727272727% no-repeat;
+	width: 10.91px;
+	height: 20.5px;
+}
+.svg-location {
+	background: url("sprite.svg") 67.21311475409836% 41.95804195804196% no-repeat;
+	width: 22px;
+	height: 31.5px;
+}
+.svg-no {
+	background: url("sprite.svg") 0 99.44134078212291% no-repeat;
+	width: 13.5px;
+	height: 13.5px;
+}
+.svg-phone {
+	background: url("sprite.svg") 35.84905660377358% 54.6875% no-repeat;
+	width: 38px;
+	height: 39px;
+}
+.svg-yes {
+	background: url("sprite.svg") 48.249027237354085% 82.22222222222223% no-repeat;
+	width: 15.5px;
+	height: 13px;
+}
+</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+If you use the sprite in conjunction with the pre-defined views (respectively fragment identifiers),
+you will need to set the shape dimensions via CSS unless you want them to become a huge 100% in
+size. You may use the following CSS classes for doing so. They might well be outsourced to an
+external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-arrow-left-dims { width: 9px; height: 16px; }
+	.svg-arrow-right-dims { width: 8.97px; height: 16px; }
+	.svg-certificate-dims { width: 27.47px; height: 28.47px; }
+	.svg-clock-dims { width: 30px; height: 30px; }
+	.svg-deco-left-dims { width: 31px; height: 15px; }
+	.svg-deco-left-dark-dims { width: 31px; height: 15px; }
+	.svg-deco-right-dims { width: 32px; height: 15px; }
+	.svg-deco-right-dark-dims { width: 32px; height: 15px; }
+	.svg-envelope-dims { width: 41px; height: 35px; }
+	.svg-fa-envelope-dims { width: 41px; height: 35px; }
+	.svg-fa-phone-dims { width: 38px; height: 39px; }
+	.svg-fb-dims { width: 10.91px; height: 20.5px; }
+	.svg-location-dims { width: 22px; height: 31.5px; }
+	.svg-no-dims { width: 13.5px; height: 13.5px; }
+	.svg-phone-dims { width: 38px; height: 39px; }
+	.svg-yes-dims { width: 15.5px; height: 13px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG <code>&lt;view&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite. Please have a look at the HTML source for further details and be aware of the following constraints regarding the prepared <code>&lt;view&gt;</code> elements (technique B):</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you might have to use a prolyfill (if available?).</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+	
+A) Conventional CSS sprite
+====================================================================================================
+This technique uses CSS classes to display portions of the sprite as background image of
+appropriately sized elements.
+
+-->
+
+			<h3>A) Conventional CSS sprite</h3>
+			<ul>
+				
+				<li title="arrow-left">
+					<div class="icon-box">
+						
+						<!-- arrow-left -->
+						<i class="svg-arrow-left">arrow-left</i>
+						
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<i class="svg-arrow-right">arrow-right</i>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="certificate">
+					<div class="icon-box">
+						
+						<!-- certificate -->
+						<i class="svg-certificate">certificate</i>
+						
+					</div>
+					<h2>certificate</h2>
+				</li>
+				<li title="clock">
+					<div class="icon-box">
+						
+						<!-- clock -->
+						<i class="svg-clock">clock</i>
+						
+					</div>
+					<h2>clock</h2>
+				</li>
+				<li title="deco-left">
+					<div class="icon-box">
+						
+						<!-- deco-left -->
+						<i class="svg-deco-left">deco-left</i>
+						
+					</div>
+					<h2>deco-left</h2>
+				</li>
+				<li title="deco-left-dark">
+					<div class="icon-box">
+						
+						<!-- deco-left-dark -->
+						<i class="svg-deco-left-dark">deco-left-dark</i>
+						
+					</div>
+					<h2>deco-left-dark</h2>
+				</li>
+				<li title="deco-right">
+					<div class="icon-box">
+						
+						<!-- deco-right -->
+						<i class="svg-deco-right">deco-right</i>
+						
+					</div>
+					<h2>deco-right</h2>
+				</li>
+				<li title="deco-right-dark">
+					<div class="icon-box">
+						
+						<!-- deco-right-dark -->
+						<i class="svg-deco-right-dark">deco-right-dark</i>
+						
+					</div>
+					<h2>deco-right-dark</h2>
+				</li>
+				<li title="envelope">
+					<div class="icon-box">
+						
+						<!-- envelope -->
+						<i class="svg-envelope">envelope</i>
+						
+					</div>
+					<h2>envelope</h2>
+				</li>
+				<li title="fa-envelope">
+					<div class="icon-box">
+						
+						<!-- fa-envelope -->
+						<i class="svg-fa-envelope">fa-envelope</i>
+						
+					</div>
+					<h2>fa-envelope</h2>
+				</li>
+				<li title="fa-phone">
+					<div class="icon-box">
+						
+						<!-- fa-phone -->
+						<i class="svg-fa-phone">fa-phone</i>
+						
+					</div>
+					<h2>fa-phone</h2>
+				</li>
+				<li title="fb">
+					<div class="icon-box">
+						
+						<!-- fb -->
+						<i class="svg-fb">fb</i>
+						
+					</div>
+					<h2>fb</h2>
+				</li>
+				<li title="location">
+					<div class="icon-box">
+						
+						<!-- location -->
+						<i class="svg-location">location</i>
+						
+					</div>
+					<h2>location</h2>
+				</li>
+				<li title="no">
+					<div class="icon-box">
+						
+						<!-- no -->
+						<i class="svg-no">no</i>
+						
+					</div>
+					<h2>no</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+						
+						<!-- phone -->
+						<i class="svg-phone">phone</i>
+						
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="yes">
+					<div class="icon-box">
+						
+						<!-- yes -->
+						<i class="svg-yes">yes</i>
+						
+					</div>
+					<h2>yes</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+	
+B) External sprite with pre-defined views referenced by fragment identifiers
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are referencing the <view> elements
+pre-defined in the external sprite.
+
+-->
+
+			<h3>B) External sprite with pre-defined views referenced by fragment identifiers</h3>
+			<ul>
+				
+				<li title="arrow-left">
+					<div class="icon-box">
+						
+						<!-- arrow-left -->
+						<img src="sprite.svg#arrow-left" class="svg-arrow-left-dims" alt="arrow-left"/>
+						
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<img src="sprite.svg#arrow-right" class="svg-arrow-right-dims" alt="arrow-right"/>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="certificate">
+					<div class="icon-box">
+						
+						<!-- certificate -->
+						<img src="sprite.svg#certificate" class="svg-certificate-dims" alt="certificate"/>
+						
+					</div>
+					<h2>certificate</h2>
+				</li>
+				<li title="clock">
+					<div class="icon-box">
+						
+						<!-- clock -->
+						<img src="sprite.svg#clock" class="svg-clock-dims" alt="clock"/>
+						
+					</div>
+					<h2>clock</h2>
+				</li>
+				<li title="deco-left">
+					<div class="icon-box">
+						
+						<!-- deco-left -->
+						<img src="sprite.svg#deco-left" class="svg-deco-left-dims" alt="deco-left"/>
+						
+					</div>
+					<h2>deco-left</h2>
+				</li>
+				<li title="deco-left-dark">
+					<div class="icon-box">
+						
+						<!-- deco-left-dark -->
+						<img src="sprite.svg#deco-left-dark" class="svg-deco-left-dark-dims" alt="deco-left-dark"/>
+						
+					</div>
+					<h2>deco-left-dark</h2>
+				</li>
+				<li title="deco-right">
+					<div class="icon-box">
+						
+						<!-- deco-right -->
+						<img src="sprite.svg#deco-right" class="svg-deco-right-dims" alt="deco-right"/>
+						
+					</div>
+					<h2>deco-right</h2>
+				</li>
+				<li title="deco-right-dark">
+					<div class="icon-box">
+						
+						<!-- deco-right-dark -->
+						<img src="sprite.svg#deco-right-dark" class="svg-deco-right-dark-dims" alt="deco-right-dark"/>
+						
+					</div>
+					<h2>deco-right-dark</h2>
+				</li>
+				<li title="envelope">
+					<div class="icon-box">
+						
+						<!-- envelope -->
+						<img src="sprite.svg#envelope" class="svg-envelope-dims" alt="envelope"/>
+						
+					</div>
+					<h2>envelope</h2>
+				</li>
+				<li title="fa-envelope">
+					<div class="icon-box">
+						
+						<!-- fa-envelope -->
+						<img src="sprite.svg#fa-envelope" class="svg-fa-envelope-dims" alt="fa-envelope"/>
+						
+					</div>
+					<h2>fa-envelope</h2>
+				</li>
+				<li title="fa-phone">
+					<div class="icon-box">
+						
+						<!-- fa-phone -->
+						<img src="sprite.svg#fa-phone" class="svg-fa-phone-dims" alt="fa-phone"/>
+						
+					</div>
+					<h2>fa-phone</h2>
+				</li>
+				<li title="fb">
+					<div class="icon-box">
+						
+						<!-- fb -->
+						<img src="sprite.svg#fb" class="svg-fb-dims" alt="fb"/>
+						
+					</div>
+					<h2>fb</h2>
+				</li>
+				<li title="location">
+					<div class="icon-box">
+						
+						<!-- location -->
+						<img src="sprite.svg#location" class="svg-location-dims" alt="location"/>
+						
+					</div>
+					<h2>location</h2>
+				</li>
+				<li title="no">
+					<div class="icon-box">
+						
+						<!-- no -->
+						<img src="sprite.svg#no" class="svg-no-dims" alt="no"/>
+						
+					</div>
+					<h2>no</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+						
+						<!-- phone -->
+						<img src="sprite.svg#phone" class="svg-phone-dims" alt="phone"/>
+						
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="yes">
+					<div class="icon-box">
+						
+						<!-- yes -->
+						<img src="sprite.svg#yes" class="svg-yes-dims" alt="yes"/>
+						
+					</div>
+					<h2>yes</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Sat, 13 May 2017 20:50:14 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+/* Form */
+
+.s-form
+  position: relative
+  padding: 140px 0
+  +xs()
+    padding: 50px 0
+
+  &__coffebean
+    +bg-center('../img/coffebean7.png')
+    background-size: cover
+    width: 370px
+    height: 358px
+    z-index: -1
+    +position(absolute, 154px null null 15.5%)
+    +md()
+      top: 200px
+      left: 2%
+    +sd()
+      top: 530px
+      left: 5%
+    +xs()
+      display: none
+  &__coffebean-left
+    +bg-center('../img/coffebean6.png')
+    background-size: cover
+    width: 658px
+    height: 770px
+    z-index: -1
+    +position(absolute, -80px null null 0)
+    +md()
+      top: -20px
+    +xs()
+      display: none
+  &__coffebean-right
+    +bg-center('../img/coffebean8.png')
+    +position(absolute, null 0 27px null)
+    background-size: cover
+    width: 172px
+    height: 345px
+    z-index: -1
+
+  &__title
+    @extend %section-header
+    border-bottom: 1px solid #6e6e6e
+    text-align: left
+    +sd()
+      text-align: center
+  &__text
+    text-align: left
+    +sd()
+      text-align: center
+    +xs()
+      font-size: 14px
+  &__form
+    margin-top: 48px
+    margin-bottom: 128px
+    +xs()
+      margin: 20px 0
+
+
+.form
+  &__input
+    display: block
+    margin-top: 45px
+  &__button
+    +add-arrow(110px, 15px, right, 80%, 90%, $dark-color)
+    margin-left: 55px
+    margin-top: 20px
+    +md()
+      margin: 0 auto
+      margin-top: 80px
+    +xs()
+      margin-top: 50px
+      &:before,
+      &:after
+        display: none
+
